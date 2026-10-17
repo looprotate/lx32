@@ -18,7 +18,7 @@ Zero violations. Zero unconnected items. I cried a little.
 
 ## what is this actually
 
-lx32 is a 32-bit CPU with a custom instruction set, running on a custom PCB, compiled by a custom LLVM backend. You can write C, compile it, and it runs on this thing.
+lx32 is a 32-bit CPU with a custom instruction set, running on a custom PCB, compiled by a custom LLVM backend. You can write C, compile it, and it runs on simulation (for now).
 
 I wanted to actually understand how computers work, not just read about it. So I built one.
 
