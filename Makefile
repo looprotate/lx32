@@ -26,7 +26,7 @@ ifeq ($(UNAME_S),Darwin)
 else
   # Linux (apt or general)
   VERILATOR_ROOT := /usr/share/verilator
-endif	
+endif
 VERILATOR_INC := $(VERILATOR_ROOT)/include
 
 VALIDATOR_DIR := tools/lx32_validator
@@ -216,7 +216,7 @@ formal-all: formal-sva formal-lec ## Run full formal hardware suite (SVA + LEC)
 # ======================
 LLVM_DIR     ?= $(CURDIR)/.llvm
 BACKEND_SRC  := $(CURDIR)/tools/lx32_backend
-LLVM_REPO    := https://github.com/Axel84727/llvm-project-lx32.git
+LLVM_REPO    := https://github.com/looprotate/llvm-project-lx32.git
 NPROC        := $(shell nproc 2>/dev/null || sysctl -n hw.logicalcpu)
 LLD_EXISTS   := $(shell which lld 2>/dev/null)
 LLVM_BRANCH ?= main
@@ -289,7 +289,3 @@ run-binary: librust ## Run a custom LX32 binary on the RTL simulation (usage: ma
 	@if [ ! -f "$(BIN)" ]; then echo "ERROR: File $(BIN) not found"; exit 2; fi
 	@echo "→ Running $(BIN) on LX32 RTL Simulation..."
 	@cd $(VALIDATOR_DIR) && cargo run --release --bin run_program -- --binary $(abspath $(BIN))
-
-
-
-
